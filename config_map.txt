@@ -1,0 +1,15 @@
+apiVersion: v1              
+kind: ConfigMap             
+
+metadata:
+  name: app-config           
+  namespace: abdullah       
+  labels:
+    app: my-pod  
+
+
+#how to use it:
+valueFrom:
+    configMapKeyRef:
+      name: app-config
+      key: APP_ENV

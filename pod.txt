@@ -1,0 +1,14 @@
+version: v1
+kind: pod
+
+metadata:
+  name: app
+  namespace: abdullah
+  labels:
+    app : my-pod
+spec:
+  containers: 
+    - name: nginx-container
+      image: nginx:latest
+      ports:
+       - containerPort: 80

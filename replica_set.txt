@@ -1,0 +1,26 @@
+version: apps/v1
+kind: replicaSet
+
+metadata:
+  name: my-replica
+  namesapce: abdullah
+  labels: 
+    app: my-pod
+
+spec:
+  replicas: 3
+  selector: 
+    matchlabels: 
+      app: my-pod
+  template:
+    metadata: 
+      labels:
+        app: my-pod
+    spec:
+      containers:
+        - name: nginx -container
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+
+

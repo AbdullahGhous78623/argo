@@ -1,0 +1,23 @@
+apiVersion: apps/v1           
+kind: Deployment              
+metadata:
+  name: app-deployment        
+  namespace: abdullah         
+  labels:
+    app: my-pod               
+
+spec:
+  replicas: 3                
+  selector:                   
+    matchLabels:
+      app: my-pod             
+  template:                   
+    metadata:
+      labels:
+        app: my-pod           
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:latest 
+          ports:
+            - containerPort: 80
